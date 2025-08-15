@@ -22,7 +22,9 @@ const userService= {
 
     login: async (req, res) => {
         const {email, loginPassword} = req.body;
+        console.log(loginPassword);
         const user = await userModel.findOne({email: email});
+        console.log(user);
         if (!user) throw new responseError(404, "user not found");
         const { _id, name, password, role } = user
         const isValidPassword = await bcrypt.compare(loginPassword, password)

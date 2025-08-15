@@ -25,7 +25,7 @@ export const loginSchema = {
         email: Joi.string()
             .email()
             .required(),
-        password: Joi.string()
+        loginPassword: Joi.string()
             .required()
     })
 };
